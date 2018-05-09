@@ -10,11 +10,23 @@ with open('data.csv', newline='') as data_intake:
     for row in data_intake:
         data_input.extend(row)
 
-# Splits the long list into separate list entries
-# Needs to loop and create new list for every moon entry
 
-print(data_input)
+def ore_price_check():
 
-split = data_input[0].split('\t')
+    ore_id = []
+    ore_fraction = []
 
-print("System {}, Planet {}, Moon {}".format(split[0], split[1], split[2]))
+    split_data_input = data_input[3].split('\t')
+
+    i = 3
+
+    while i < (len(split_data_input)):
+
+        print(split_data_input[i])
+        print(split_data_input[i+1])
+        i = i + 6
+
+    return ore_id, ore_fraction
+
+
+ore_price_check()
