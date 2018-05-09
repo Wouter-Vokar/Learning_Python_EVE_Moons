@@ -1,9 +1,17 @@
 import csv
 
-with open('data.csv', newline='') as f:
-    reader = csv.reader(f)
-    w = []
-    for row in reader:
-        w.extend(row)
+# Opens Data.csv to and saves the data in data_intake
+# After which each row is saved as an entry in data_input
 
-print(w[5])
+with open('data.csv', newline='') as data_intake:
+    data_intake = csv.reader(data_intake)
+    data_input = []
+
+    for row in data_intake:
+        data_input.extend(row)
+
+# Splits the long list into separate list entries
+
+split = data_input[0].split('\t')
+
+print("System {}, Planet {}, Moon {}".format(split[0], split[1], split[2]))
