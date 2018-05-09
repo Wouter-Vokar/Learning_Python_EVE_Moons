@@ -11,12 +11,12 @@ with open('data.csv', newline='') as data_intake:
         data_input.extend(row)
 
 
-def ore_price_check():
+def ore_price_check(moon_number):
 
     ore_id = []
     ore_fraction = []
 
-    split_data_input = data_input[3].split('\t')
+    split_data_input = data_input[moon_number].split('\t')
 
     i = 3
 
@@ -29,4 +29,6 @@ def ore_price_check():
     return ore_id, ore_fraction
 
 
-ore_price_check()
+for moon_numbers in range(len(data_input)):
+
+    ore_price_check(moon_numbers)
