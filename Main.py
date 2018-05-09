@@ -11,6 +11,7 @@ with open('data.csv', newline='') as data_intake:
         data_input.extend(row)
 
 # Splits the long list into separate list entries
+# Needs to loop and create new list for every moon entry
 
 split = data_input[0].split('\t')
 
